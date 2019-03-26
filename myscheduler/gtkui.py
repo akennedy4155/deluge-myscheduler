@@ -296,7 +296,7 @@ class GtkUI(GtkPluginBase):
             
         frame = gtk.Frame()
         label = gtk.Label()
-        label.set_markup(_("<b>Scheduler Override</b>"))
+        label.set_markup(_("<b>Forced Settings</b>"))
         frame.set_label_widget(label)    
         forcedvbox = gtk.VBox(False, 1)
         self.chkIndividual = gtk.CheckButton("Use Individual Scheduling")
