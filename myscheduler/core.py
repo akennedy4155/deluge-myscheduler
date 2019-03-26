@@ -55,7 +55,8 @@ DEFAULT_PREFS = {
     "low_active_up": -1,
     "button_state": [[0] * 7 for dummy in xrange(24)],
     "force_use_individual" : True,
-    "force_unforce_finished" : True
+    "force_unforce_finished" : True,
+    "ignore_scheduler" : False
 }
 
 DEFAULT_STATES = {}
@@ -163,7 +164,7 @@ class Core(CorePluginBase):
         state = self.get_state()
         self.update_torrent()
 
-        if state == "Green":
+        if state == "Green" or self.config["ignore_scheduler"]:
             # This is Green (Normal) so we just make sure we've applied the
             # global defaults
             self.__apply_set_functions()

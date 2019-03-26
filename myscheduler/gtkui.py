@@ -203,6 +203,7 @@ class GtkUI(GtkPluginBase):
         config["button_state"] = self.scheduler_select.button_state
         config["force_use_individual"] = self.chkIndividual.get_active()
         config["force_unforce_finished"] = self.chkUnforceFinished.get_active()
+        config["ignore_scheduler"] = self.chkIgnoreScheduler.get_active()
         client.myscheduler.set_config(config)
 
     def on_show_prefs(self):
@@ -216,6 +217,7 @@ class GtkUI(GtkPluginBase):
             self.spin_active_up.set_value(config["low_active_up"])
             self.chkIndividual.set_active(config["force_use_individual"])
             self.chkUnforceFinished.set_active(config["force_unforce_finished"])
+            self.chkIgnoreScheduler.set_active(config["ignore_scheduler"])
 
 
         client.myscheduler.get_config().addCallback(on_get_config)
