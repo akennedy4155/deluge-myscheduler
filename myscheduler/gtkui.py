@@ -290,7 +290,9 @@ class GtkUI(GtkPluginBase):
         self.chkIndividual = gtk.CheckButton("Use Individual Scheduling")
         forcedvbox.pack_start(self.chkIndividual)
         self.chkUnforceFinished = gtk.CheckButton("Un-Force on Finished")
-        forcedvbox.pack_start(self.chkUnforceFinished)        
+        forcedvbox.pack_start(self.chkUnforceFinished)
+        self.chkIgnoreScheduler = gtk.CheckButton("Ignore Scheduler")     
+        forcedvbox.pack_start(self.chkIgnoreScheduler)   
 
         frame.add(forcedvbox)
         vbox.pack_start(frame, False, False)
