@@ -282,7 +282,7 @@ class Core(CorePluginBase):
                 tstate = {'forced' : False, 'paused' : False }
                 self.torrent_states[torrent_id] = tstate
 
-            if self.state == 'Green' or self.state == 'Yellow':
+            if self.state == 'Green' or self.state == 'Yellow' or self.config["ignore_scheduler"]:
                 if tstate['paused']:
                     torrent.resume()
                     tstate['paused'] = False
