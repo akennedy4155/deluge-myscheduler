@@ -190,7 +190,7 @@ class Core(CorePluginBase):
             component.get("EventManager").emit(SchedulerEvent(self.state))
 
         # called after self.state is set
-        if self.config["force_use_individual"] and (state == 'Green' or state == 'Red'):
+        if self.config["force_use_individual"] and (state == 'Green' or state == 'Red' or self.config["ignore_scheduler"]):
             self.update_torrent()
 
         if timer:
